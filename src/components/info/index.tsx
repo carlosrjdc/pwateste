@@ -82,9 +82,11 @@ export default function DrawerDemo() {
 						<DrawerTitle>Move Goal</DrawerTitle>
 						<DrawerDescription>Set your daily activity goal.</DrawerDescription>
 					</DrawerHeader>
-						<BuscarQRCode/>
+					<BuscarQRCode />
 					<DrawerFooter>
-						<Button>Submit</Button>
+						<DrawerClose asChild>
+							<Button>Submit</Button>
+						</DrawerClose>
 						<DrawerClose asChild>
 							<Button variant='outline'>Cancel</Button>
 						</DrawerClose>
