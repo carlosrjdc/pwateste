@@ -1,38 +1,18 @@
 /** @format */
 "use client";
 import Image from "next/image";
-import { Html5Qrcode } from "html5-qrcode";
-import { useEffect, useState } from "react";
+
 import DrawerDemo from "@/components/info";
+import CalendarForm from "@/components/calendario";
 
 export default function Home() {
-	const [scanResult, setScanResult] = useState(null);
-
-	useEffect(() => {
-		const scanner = new Html5Qrcode("reader")
-
-		const config = { fps: 10, qrbox: { width: 250, height: 250 } };
-
-		scanner.start({ facingMode: "environment" },config,success,error)
-
-		function success(result: any) {
-			scanner.stop();
-			setScanResult(result);
-		}
-
-		function error(err: any) {
-			console.warn(err);
-		}
-	}, []);
 
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
 			<div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
 				
-				{scanResult ? <div>Sucess: {scanResult}</div> : <div id="reader"></div>}
-
-				<button className="bg-green-400 p-2 m-1" onClick={()=> setScanResult(null)}>scaner</button>
 				<DrawerDemo/>
+
 
 				<p className='fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30'>
 					Get started by editing&nbsp;

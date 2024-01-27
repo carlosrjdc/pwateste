@@ -15,6 +15,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
+import CalendarForm from "../calendario"
 
 export default function TabsDemo() {
   return (
@@ -36,10 +37,7 @@ export default function TabsDemo() {
               <Label htmlFor="name">Name</Label>
               <Input id="name" defaultValue="Pedro Duarte" />
             </div>
-            <div className="space-y-1">
-              <Label htmlFor="username">Username</Label>
-              <Input id="username" defaultValue="@peduarte" />
-            </div>
+            <CalendarForm/>
           </CardContent>
           <CardFooter>
             <Button>Save changes</Button>

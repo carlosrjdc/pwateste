@@ -20,6 +20,7 @@ import { Input } from "../ui/input";
 import { Checkbox } from "../ui/checkbox";
 import { Label } from "../ui/label";
 import TabsDemo from "../tabTeste";
+import BuscarQRCode from "../buscarQrCode";
 
 const data = [
 	{
@@ -81,7 +82,7 @@ export default function DrawerDemo() {
 						<DrawerTitle>Move Goal</DrawerTitle>
 						<DrawerDescription>Set your daily activity goal.</DrawerDescription>
 					</DrawerHeader>
-						<TabsDemo />
+						<BuscarQRCode/>
 					<DrawerFooter>
 						<Button>Submit</Button>
 						<DrawerClose asChild>
