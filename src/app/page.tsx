@@ -1,26 +1,18 @@
 /** @format */
 "use client";
 import Image from "next/image";
-import { Html5QrcodeScanner } from "html5-qrcode";
+import { Html5Qrcode } from "html5-qrcode";
 import { useEffect, useState } from "react";
 
 export default function Home() {
 	const [scanResult, setScanResult] = useState(null);
 
 	useEffect(() => {
-		const scanner = new Html5QrcodeScanner(
-			"reader",
-			{
-				qrbox: {
-					width: 250,
-					height: 250,
-				},
-				fps: 5,
-			},
-			true,
-		);
+		const scanner = new Html5Qrcode("reader")
 
-		scanner.render(success, error);
+		const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+
+		scanner.start({ facingMode: "environment" },config,success,error)
 
 		function success(result: any) {
 			scanner.clear();
