@@ -15,7 +15,7 @@ export default function Home() {
 		scanner.start({ facingMode: "environment" },config,success,error)
 
 		function success(result: any) {
-			scanner.clear();
+			scanner.stop();
 			setScanResult(result);
 		}
 
